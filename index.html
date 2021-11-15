@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css-->
+    <link rel="stylesheet" href="./style.css">
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+
+    <!--vue js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>ToDoList</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <header class="app-header">
+            <img src="https://www.boolean.careers/images/misc/logo.png" alt="boolean">
+        </header>
+
+        <section class="new-todo">
+            <input type="text" placeholder="add todo" v-model.trim="newtodo" @keyup.enter="addTodo">
+
+            <button class="button" @click="addTodo">Add</button>
+        </section>
+
+        <main class="todos-section">
+            <ul class="todos-list">
+                <li class="todo" v-for="(todo, index) in todos">
+                    <span class="text" :class="{completed: todo.completed}">{{ todo.text }}</span>
+                    <i class="fas fa-eraser delete" @click="removeTodo(index)"></i>
+                </li>
+
+            </ul>
+
+        </main>
+    </div>
+
+
+
+
+    <script src="./main.js">
+        Create
+    </script>
+</body>
+
+</html>
